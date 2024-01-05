@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\KonsultasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [LandingPageController::class, 'index'])->name("landing-page");
+
+Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name("konsultasi");

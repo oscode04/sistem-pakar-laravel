@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;600&family=Open+Sans:wght@400;600&family=Overpass:wght@700;800&display=swap');
+
+.main-img img {
+    height: 400px;
+    margin-left: 220px;
+    margin-top: 12px;
+}
+
+.web-tittle {
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.web-tittle h1 {
+    font-size: 45px;
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: 600;
+}
+
+.web-tittle p {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.konsul-btn {
+    margin-top: 20px;
+    background-color: #252B61;
+    color: #F1F1F1;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 20px;
+    width: 175px;
+    height: 40px;
+}
+
+.konsul-btn:hover {
+    background-color: #394397;
+    color: #ffffff;
+}
+
+.info-btn {
+    margin-top: 20px;
+    border: 2px solid #252B61;
+    color: #252B61;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 20px;
+    width: 175px;
+    height: 40px;
+}
+
+
+.info-btn:hover {
+    background-color: #252B61;
+    color: #F1F1F1;
+}
