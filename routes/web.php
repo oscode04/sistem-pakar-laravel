@@ -27,4 +27,4 @@ Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name("konsult
 // route input penyakit
 Route::get('admin/input-penyakit', [InputPenyakitController::class, 'index'])->name('input-penyakit');
 Route::get('/admin/create', [InputPenyakitController::class, 'create'])->name('input-penyakit.create');
-Route::post('/admin/store', [InputPenyakitController::class, 'store'])->name('input-penyakit.store');
+Route::delete('admin/destroy/{id_disease}', [InputPenyakitController::class, 'destroy'])->name('input-penyakit.destroy');

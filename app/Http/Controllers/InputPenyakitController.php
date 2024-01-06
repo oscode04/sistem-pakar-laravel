@@ -21,12 +21,13 @@ class InputPenyakitController extends Controller
 
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
-                    return '<div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Aksi
-                                </button>
-                               
-                            </div>';
+                    return '
+                        <form action = "' . route('input-penyakit.destroy', $item->id_disease) . '" method="POST">
+                            ' . method_field('DELETE') . csrf_field() . '
+                            <button type="submit" class="dopdown-item text-danger ms-2"  style="background-color: transparent; border: none;">
+                                Hapus
+                            </button>
+                        ';
                 })
                 // ->editColumn('main_img', function ($item) {
                 //     return $item->main_img ? '<img src="' . Storage::url($item->main_img) . '" style="max-height:150px;"/>' : '';
@@ -110,12 +111,12 @@ class InputPenyakitController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id_disease)
     {
-        $item = Article::findOrFail($id);
+        $item = Diseases::where('id_disease', $id_disease);
 
         $item->delete();
-        return redirect()->route('article');
+        return redirect()->route('input-penyakit');
     }
 }
 

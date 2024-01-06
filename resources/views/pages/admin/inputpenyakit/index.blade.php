@@ -36,7 +36,7 @@
                                         <th>Nama Penyakit</th>
                                         <th>Penyebab</th>
                                         <th>Detail</th>
-                                        {{-- <th>Aksi</th> --}}
+                                        <th>Aksi</th>
                                     </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -68,13 +68,13 @@
                     { data: 'disease_name', name: 'disease_name' },
                     { data: 'disease_cause', name: 'disease_cause' },
                     { data: 'disease_detail', name: 'disease_detail' },
-                    // {
-                    //     data: 'action',
-                    //     name: 'action',
-                    //     orderable: false,
-                    //     searchable: false,
-                    //     width: '10%'
-                    // },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false,
+                        searchable: false,
+                        width: '10%'
+                    },
                 ]
             });
 
