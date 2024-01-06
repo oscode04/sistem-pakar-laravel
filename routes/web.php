@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\InputPenyakitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,8 @@ use App\Http\Controllers\KonsultasiController;
 Route::get('/', [LandingPageController::class, 'index'])->name("landing-page");
 
 Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name("konsultasi");
+
+// route input penyakit
+Route::get('admin/input-penyakit', [InputPenyakitController::class, 'index'])->name('input-penyakit');
+Route::get('/admin/create', [InputPenyakitController::class, 'create'])->name('input-penyakit.create');
+Route::post('/admin/store', [InputPenyakitController::class, 'store'])->name('input-penyakit.store');
