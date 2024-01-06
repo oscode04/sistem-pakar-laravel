@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\PenyakitRequest;
 use App\Models\Diseases;
+use Yajra\DataTables\Facades\DataTables;
 
 class InputPenyakitController extends Controller
 
@@ -16,6 +17,7 @@ class InputPenyakitController extends Controller
     {
         if (request()->ajax()) {
             // $query = Article::with(['video', 'category', 'subCategory']);
+            $query = Diseases::query();
 
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
@@ -23,19 +25,7 @@ class InputPenyakitController extends Controller
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Aksi
                                 </button>
-                                <ul class="dropdown-menu" action' .  $item->id . '">
-                                <li>
-                                    <a class="dropdown-item" href="' . route('input-penyakit.edit', $item->id) . '">Edit</a>
-                                </li>
-                                <li>
-                                    <form action = "' . route('input-penyakit.destroy', $item->id) . '" method="POST">
-                                        ' . method_field('DELETE') . csrf_field() . '
-                                        <button type="submit" class="dopdown-item text-danger ms-2"  style="background-color: transparent; border: none;">
-                                            Hapus
-                                        </button>
-                                    </form>
-                                </li>
-                                </ul>
+                               
                             </div>';
                 })
                 // ->editColumn('main_img', function ($item) {
