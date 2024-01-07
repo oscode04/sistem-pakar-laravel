@@ -45,6 +45,7 @@ Route::get('/konsultasi-gejala-7', [konsultasiGejala7Controller::class, 'index']
 Route::post('gejala-7/store-answer', [konsultasiGejala7Controller::class, 'storeAnswer'])->name("gejala-7.store-answer");
 // akhir line 1
 Route::get('/akhir-line-1/kesimpulan', [AkhirLine1Controller::class, 'index'])->name("akhir-line-1.kesimpulan");
+Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
 
 
 // route cek session

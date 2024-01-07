@@ -25,7 +25,14 @@
               type="radio"
               name="answer"
               id="inlineRadio1"
-              value="G3" />
+              value="
+              @foreach($symptoms as $symptom)
+                @if($symptom->symptom_codes == 'G3')
+                    {{ $symptom->symptoms }}
+                    @break <!-- Opsional, untuk menghentikan iterasi setelah menampilkan satu symptom -->
+                @endif
+              @endforeach
+              " />
             <label class="form-check-label" for="inlineRadio1"><b>Ya</b></label>
           </div>
           <div class="form-check form-check-inline">

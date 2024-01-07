@@ -18,11 +18,20 @@ class konsultasiGejala7Controller extends Controller
     public function storeAnswer(Request $request)
     {
         $answer = $request->input('answer');
-
-        // Menyimpan nilai dari input ke dalam session
-        Session::put('user_answer', $answer);
-
-        // dd('redirect to kesimpulan page');
+    
+        // Mendapatkan nilai dari session yang sudah ada atau membuat session baru
+        $userAnswers = session()->get('user_answer');
+    
+        // Memastikan bahwa $userAnswers adalah array
+        if (!is_array($userAnswers)) {
+            $userAnswers = [];
+        }
+        
+        // Menambahkan nilai baru ke dalam array session
+        $userAnswers[] = $answer;
+    
+        // Menyimpan kembali array yang telah diupdate ke dalam session
+        session(['user_answer' => $userAnswers]);
 
          return redirect()->route('akhir-line-1.kesimpulan');
     }
