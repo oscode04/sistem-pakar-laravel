@@ -17,8 +17,4 @@ class Symptom extends Model
         'symptom_codes', 'symptoms'
     ];
 
-    public function disease(){
-        return $this->belongsTo(Disease::class, 'id_disease', 'id_disease');
-    }
-
 }
