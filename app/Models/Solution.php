@@ -12,11 +12,7 @@ class Solution extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'solution'
+        'solution_code', 'solution'
     ];
-
-    public function disease(){
-        return $this->belongsTo(Disease::class, 'id_disease', 'id_disease');
-    }
 
 }
