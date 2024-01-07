@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\PenyakitRequest;
 use App\Models\Diseases;
+use App\Models\Symptom;
+use App\Models\Solution;
 use Yajra\DataTables\Facades\DataTables;
 
 class InputPenyakitController extends Controller
@@ -45,7 +47,15 @@ class InputPenyakitController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.inputpenyakit.create');
+        $symptoms = Symptom::all();
+        $solutions = Solution::all();
+
+        return view('pages.admin.inputpenyakit.create',
+        [
+            'symptoms' => $symptoms,
+            'solutions' => $solutions
+        ]
+    );
     }
 
     /**
@@ -53,9 +63,24 @@ class InputPenyakitController extends Controller
      */
     public function store(PenyakitRequest $request)
     {
-        $data = $request->all();
+        // $data = $request->all();
 
-        Diseases::create($data);
+        // Diseases::create($data);
+
+        // Validasi data formulir
+        
+        // Simpan data penyakit ke dalam tabel diseases
+        $disease = Diseases::create([
+            'disease_name' => $request->disease_name,
+            'disease_code' => $request->disease_code,
+            'disease_cause' => $request->disease_cause,
+            'disease_detail' => $request->disease_detail,
+            // tambahkan kolom lain sesuai kebutuhan
+        ]);
+
+        // Simpan relasi antara penyakit dan gejala ke dalam tabel pivot
+        $disease->symptoms()->attach($request->symptoms);
+        $disease->solutions()->attach($request->solutions);
 
         return redirect()->route('input-penyakit');
     }

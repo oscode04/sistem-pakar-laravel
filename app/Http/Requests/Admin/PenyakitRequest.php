@@ -23,6 +23,7 @@ class PenyakitRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'disease_code' => 'required',
             'disease_name' => 'required|max:255',
             'disease_cause' => 'required',
             'disease_detail' => 'required',

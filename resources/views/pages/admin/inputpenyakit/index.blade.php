@@ -33,6 +33,7 @@
                                     <thead>
                                     <tr>
                                         {{-- <th>Nomor</th> --}}
+                                        <th>Kode Penyakit</th>
                                         <th>Nama Penyakit</th>
                                         <th>Penyebab</th>
                                         <th>Detail</th>
@@ -65,15 +66,16 @@
                 },
                 columns: [
                     // { data: 'id', name: 'id' },
-                    { data: 'disease_name', name: 'disease_name' },
-                    { data: 'disease_cause', name: 'disease_cause' },
-                    { data: 'disease_detail', name: 'disease_detail' },
+                    { data: 'disease_code', name: 'disease_code', width: '10%' },
+                    { data: 'disease_name', name: 'disease_name', width: '15%' },
+                    { data: 'disease_cause', name: 'disease_cause', width: '15%'},
+                    { data: 'disease_detail', name: 'disease_detail',  },
                     {
                         data: 'action',
                         name: 'action',
                         orderable: false,
                         searchable: false,
-                        width: '10%'
+                        width: '5%'
                     },
                 ]
             });
