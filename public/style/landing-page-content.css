@@ -6,10 +6,12 @@
     margin-top: 12px;
 }
 
+/* 
 .web-tittle {
     top: 50%;
     transform: translateY(50%);
-}
+    overflow: hidden;
+} */
 
 .web-tittle h1 {
     font-size: 45px;
@@ -56,4 +58,34 @@
 .info-btn:hover {
     background-color: #252B61;
     color: #F1F1F1;
+}
+
+/* responsive */
+@media (max-width: 767.98px) {
+    .main-img img {
+        height: 350px;
+        margin-left: 220px;
+        margin-top: 12px;
+    }
+
+    .web-tittle h1 {
+        font-size: 30px;
+    }
+
+    .web-tittle p {
+        font-size: 14px;
+    }
+
+    .konsul-btn {
+        margin-top: 10px;
+        font-size: 13px;
+        width: 160px;
+    }
+
+    .info-btn {
+        margin-top: 10px;
+        font-size: 13px;
+        width: 160px;
+    }
+
 }

@@ -20,3 +20,7 @@
 .navbar-nav .active {
     font-weight: 600;
 }
+
+.navbar-toggler {
+    background-color: #F1F1F1;
+}
