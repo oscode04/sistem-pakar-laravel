@@ -23,6 +23,6 @@ class KonsultasiController extends Controller
         // Menyimpan nilai dari input ke dalam session
         Session::put('user_answer', $answer);
 
-         return redirect()->route('konsultasi2');
+         return redirect()->route('konsultasi-gejala-3');
     }
 }

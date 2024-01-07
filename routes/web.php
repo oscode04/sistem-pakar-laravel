@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\KonsultasiController;
-use App\Http\Controllers\KonsultasiController2;
+use App\Http\Controllers\konsultasiGejala3Controller;
 use App\Http\Controllers\InputPenyakitController;
 use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
@@ -28,7 +28,11 @@ Route::get('/', [LandingPageController::class, 'index'])->name("landing-page");
 Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name("konsultasi");
 Route::post('/store-answer', [KonsultasiController::class, 'storeAnswer'])->name('store-answer');
 // Route::post('/konsultasi/store', [KonsultasiController::class, 'storeAnswer'])->name("store-answer");
-Route::get('/konsultasi2', [KonsultasiController2::class, 'halamanDua'])->name("konsultasi2");
+Route::get('/konsultasi-gejala-3', [konsultasiGejala3Controller::class, 'index'])->name("konsultasi-gejala-3");
+
+
+
+// route cek session
 Route::get('/view-session', function () {
     dump(session()->all());
 });
