@@ -14,11 +14,15 @@ class konsultasiGejala3Controller extends Controller
 
         return view('pages.line1.consultation-gejala-3', ['symptoms' => $symptoms]);
     }
-    // public function halamanKonsultasiGejala3()
-    // {
-    //     // Mengambil nilai jawaban dari session
-    //     $userAnswer = Session::get('user_answer');
 
-    //     return view('pages.line1.consultation-gejala-3', ['userAnswer' => $userAnswer]);
-    // }
+    // simpan data ke session
+    public function storeAnswer(Request $request)
+    {
+        $answer = $request->input('answer');
+
+        // Menyimpan nilai dari input ke dalam session
+        Session::put('user_answer', $answer);
+
+         return redirect()->route('gejala-5.konsultasi-gejala-5');
+    }
 }

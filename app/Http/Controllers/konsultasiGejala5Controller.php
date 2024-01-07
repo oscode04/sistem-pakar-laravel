@@ -6,15 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Symptom;
 use Illuminate\Support\Facades\Session;
 
-class KonsultasiController extends Controller
+class konsultasiGejala5Controller extends Controller
 {
     public function index()
     {
         $symptoms = Symptom::all();
 
-        return view('pages.consultation', ['symptoms' => $symptoms]);
+        return view('pages.line1.consultation-gejala-5', ['symptoms' => $symptoms]);
     }
-
     // simpan data ke session
     public function storeAnswer(Request $request)
     {
@@ -23,6 +22,6 @@ class KonsultasiController extends Controller
         // Menyimpan nilai dari input ke dalam session
         Session::put('user_answer', $answer);
 
-        return redirect()->route('gejala-3.konsultasi-gejala-3');
+         return redirect()->route('gejala-7.konsultasi-gejala-7');
     }
 }

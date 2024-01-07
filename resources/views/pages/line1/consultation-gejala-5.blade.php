@@ -10,13 +10,13 @@
       <h2 class="text-lg-center">Gejala</h2>
       <p class="text-lg-center">
         @foreach($symptoms as $symptom)
-          @if($symptom->symptom_codes == 'G1')
+          @if($symptom->symptom_codes == 'G5')
               {{ $symptom->symptoms }}
               @break <!-- Opsional, untuk menghentikan iterasi setelah menampilkan satu symptom -->
           @endif
         @endforeach
       </p>
-      <form method="POST" action="{{ route('gejala-awal.store-answer') }}">
+      <form method="POST" action="{{ route('gejala-5.store-answer') }}">
         @csrf
         <div class="yesorno text-lg-center mt-3">
           <div class="form-check form-check-inline">
@@ -25,7 +25,7 @@
               type="radio"
               name="answer"
               id="inlineRadio1"
-              value="G1" />
+              value="G5" />
             <label class="form-check-label" for="inlineRadio1"><b>Ya</b></label>
           </div>
           <div class="form-check form-check-inline">
@@ -34,7 +34,7 @@
               type="radio"
               name="answer"
               id="inlineRadio2"
-              value="tidak" />
+              value="" />
             <label class="form-check-label" for="inlineRadio2"
               ><b>Tidak</b></label
             >

@@ -16,7 +16,7 @@
           @endif
         @endforeach
       </p>
-      <form method="POST" action="{{ route('store-answer') }}">
+      <form method="POST" action="{{ route('gejala-3.store-answer') }}">
         @csrf
         <div class="yesorno text-lg-center mt-3">
           <div class="form-check form-check-inline">

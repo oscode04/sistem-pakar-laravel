@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\konsultasiGejala3Controller;
+use App\Http\Controllers\konsultasiGejala5Controller;
+use App\Http\Controllers\konsultasiGejala7Controller;
+use App\Http\Controllers\AkhirLine1Controller;
 use App\Http\Controllers\InputPenyakitController;
 use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
@@ -25,11 +28,23 @@ use App\Http\Controllers\InputSolusiController;
 
 Route::get('/', [LandingPageController::class, 'index'])->name("landing-page");
 
+// ini untuk pertanyaan pertama
 Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name("konsultasi");
-Route::post('/store-answer', [KonsultasiController::class, 'storeAnswer'])->name('store-answer');
+Route::post('gejala-awal/store-answer', [KonsultasiController::class, 'storeAnswer'])->name('gejala-awal.store-answer');
 // Route::post('/konsultasi/store', [KonsultasiController::class, 'storeAnswer'])->name("store-answer");
-Route::get('/konsultasi-gejala-3', [konsultasiGejala3Controller::class, 'index'])->name("konsultasi-gejala-3");
 
+// line 1
+// gejala 3
+Route::get('/konsultasi-gejala-3', [konsultasiGejala3Controller::class, 'index'])->name("gejala-3.konsultasi-gejala-3");
+Route::post('gejala-3/store-answer', [konsultasiGejala3Controller::class, 'storeAnswer'])->name("gejala-3.store-answer");
+// gejala 5
+Route::get('/konsultasi-gejala-5', [konsultasiGejala5Controller::class, 'index'])->name("gejala-5.konsultasi-gejala-5");
+Route::post('gejala-5/store-answer', [konsultasiGejala5Controller::class, 'storeAnswer'])->name("gejala-5.store-answer");
+// gejala 7
+Route::get('/konsultasi-gejala-7', [konsultasiGejala7Controller::class, 'index'])->name("gejala-7.konsultasi-gejala-7");
+Route::post('gejala-7/store-answer', [konsultasiGejala7Controller::class, 'storeAnswer'])->name("gejala-7.store-answer");
+// akhir line 1
+Route::get('/akhir-line-1/kesimpulan', [AkhirLine1Controller::class, 'index'])->name("akhir-line-1.kesimpulan");
 
 
 // route cek session
