@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\konsultasiGejala2Controller;
 use App\Http\Controllers\konsultasiGejala3Controller;
@@ -22,6 +23,9 @@ use App\Http\Controllers\AkhirLine2cController;
 use App\Http\Controllers\InputPenyakitController;
 use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
+use App\Http\Controllers\AntraknosaController;
+use App\Http\Controllers\PhytopthoraController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +43,7 @@ use App\Http\Controllers\InputSolusiController;
 // });
 
 Route::get('/', [LandingPageController::class, 'index'])->name("landing-page");
+Route::get('/information', [InformationController::class, 'index'])->name("information");
 
 // ini untuk pertanyaan pertama
 Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name("konsultasi");
@@ -103,6 +108,17 @@ Route::post('gejala-10-line-2-c/store-answer', [KonsultasiGejala10Controller::cl
 // akhir line 2 B
 Route::get('/akhir-line-2-c/kesimpulan', [AkhirLine2cController::class, 'index'])->name("akhir-line-2-c.kesimpulan");
 Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
+
+// routing information
+// penyakit 1
+Route::get('/antraknosa', [AntraknosaController::class, 'index'])->name("antraknosa");
+Route::get('/phytopthora', [PhytopthoraController::class, 'index'])->name("phytopthora");
+
+
+
+
+
+
 
 // route cek session
 Route::get('/view-session', function () {

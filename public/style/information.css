@@ -1,0 +1,27 @@
+.custom-penyakit-card {
+    border: 1px solid #181818;
+    width: 200px;
+    height: 220px;
+    transition: 0.5s ease-in-out;
+}
+
+.custom-penyakit-card a {
+    text-decoration: none;
+}
+
+.nama-penyakit {
+    color: #181818;
+    font-size: 26px;
+    font-weight: 600;
+    transition: 0.5s ease-in-out;
+}
+
+.custom-penyakit-card:hover {
+    background-color: #27343a;
+    border: none;
+}
+
+.custom-penyakit-card:hover .nama-penyakit {
+    color: #fffcf7;
+    /* Mengubah warna teks saat card dihover */
+}

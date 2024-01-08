@@ -3,3 +3,4 @@
 <link rel="stylesheet" href="{{ asset('../style/navbar.css') }}" />
 <link rel="stylesheet" href="{{ asset('../style/konsultasi.css') }}" />
 <link rel="stylesheet" href="{{ asset('../style/hasil-akhir.css') }}" />
+<link rel="stylesheet" href="{{ asset('../style/information.css') }}" />

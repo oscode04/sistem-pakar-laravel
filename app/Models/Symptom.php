@@ -13,6 +13,7 @@ class Symptom extends Model
     use SoftDeletes;
 
     protected $table = 'symptoms';
+    protected $primaryKey = 'id_symptoms';
 
     protected $fillable = [
         'symptom_codes', 'symptoms'

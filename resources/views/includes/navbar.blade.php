@@ -19,7 +19,7 @@
           <a class="nav-link active" aria-current="page" href="{{route("landing-page")}}"
             >Home</a
           >
-          <a class="nav-link ms-lg-4" href="#">Informasi Penyakit</a>
+          <a class="nav-link ms-lg-4" href="{{ route("information") }}">Informasi Penyakit</a>
           <a class="nav-link ms-lg-4" href="{{route("konsultasi")}}">Konsultasi</a>
         </div>
       </div>
