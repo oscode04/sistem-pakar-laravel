@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <div class="mt-lg-4">
-      <h2 class="text-lg-center">Gejala</h2>
+      <h4 class="text-lg-center mb-lg-2">Apakah Tanaman Anda Mengalami Gejala dibawah ini?</h4>
       <p class="text-lg-center">
         @foreach($symptoms as $symptom)
           @if($symptom->symptom_codes == 'G3')
@@ -21,6 +21,7 @@
         <div class="yesorno text-lg-center mt-3">
           <div class="form-check form-check-inline">
             <input
+              required
               class="form-check-input"
               type="radio"
               name="answer"
@@ -37,6 +38,7 @@
           </div>
           <div class="form-check form-check-inline">
             <input
+              required
               class="form-check-input"
               type="radio"
               name="answer"
