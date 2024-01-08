@@ -10,13 +10,13 @@
       <h4 class="text-lg-center mb-lg-2">Apakah Tanaman Anda Mengalami Gejala dibawah ini?</h4>
       <p class="text-lg-center">
         @foreach($symptoms as $symptom)
-          @if($symptom->symptom_codes == 'G2')
+          @if($symptom->symptom_codes == 'G8')
               {{ $symptom->symptoms }}
               @break <!-- Opsional, untuk menghentikan iterasi setelah menampilkan satu symptom -->
           @endif
         @endforeach
       </p>
-      <form method="POST" action="{{ route('gejala-2.store-answer') }}">
+      <form method="POST" action="{{ route('gejala-8.store-answer') }}">
         @csrf
         <div class="yesorno text-lg-center mt-3">
           <div class="form-check form-check-inline">
@@ -28,7 +28,7 @@
               id="inlineRadio1"
               value="
               @foreach($symptoms as $symptom)
-                @if($symptom->symptom_codes == 'G2')
+                @if($symptom->symptom_codes == 'G8')
                     {{ $symptom->symptoms }}
                     @break <!-- Opsional, untuk menghentikan iterasi setelah menampilkan satu symptom -->
                 @endif

@@ -6,8 +6,11 @@ use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\konsultasiGejala2Controller;
 use App\Http\Controllers\konsultasiGejala3Controller;
 use App\Http\Controllers\konsultasiGejala5Controller;
+use App\Http\Controllers\KonsultasiGejala6Controller;
 use App\Http\Controllers\konsultasiGejala7Controller;
+use App\Http\Controllers\KonsultasiGejala8Controller;
 use App\Http\Controllers\AkhirLine1Controller;
+use App\Http\Controllers\AkhirLine2aController;
 use App\Http\Controllers\InputPenyakitController;
 use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
@@ -52,6 +55,19 @@ Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLanding
 // line 2
 // gejala 2
 Route::get('/konsultasi-gejala-2', [konsultasiGejala2Controller::class, 'index'])->name("gejala-2.konsultasi-gejala-2");
+Route::post('gejala-2/store-answer', [konsultasiGejala2Controller::class, 'storeAnswer'])->name("gejala-2.store-answer");
+// line 2 A
+// gejala 6
+Route::get('/konsultasi-gejala-6', [KonsultasiGejala6Controller::class, 'index'])->name("gejala-6.konsultasi-gejala-6");
+Route::post('gejala-6/store-answer', [KonsultasiGejala6Controller::class, 'storeAnswer'])->name("gejala-6.store-answer");
+// gejala 8
+Route::get('/konsultasi-gejala-8', [KonsultasiGejala8Controller::class, 'index'])->name("gejala-8.konsultasi-gejala-8");
+Route::post('gejala-8/store-answer', [KonsultasiGejala8Controller::class, 'storeAnswer'])->name("gejala-8.store-answer");
+// akhir line 2 A
+Route::get('/akhir-line-2-a/kesimpulan', [AkhirLine2aController::class, 'index'])->name("akhir-line-2-a.kesimpulan");
+Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
+
+
 // route cek session
 Route::get('/view-session', function () {
     dump(session()->all());
