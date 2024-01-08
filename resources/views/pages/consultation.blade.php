@@ -41,7 +41,7 @@
               type="radio"
               name="answer"
               id="inlineRadio2"
-              value="tidak" />
+              value="" />
             <label class="form-check-label" for="inlineRadio2"
               ><b>Tidak</b></label
             >

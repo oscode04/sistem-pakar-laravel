@@ -13,6 +13,7 @@ class Solution extends Model
     use SoftDeletes;
 
     protected $table = 'solutions';
+    protected $primaryKey = 'id_solution';
 
     protected $fillable = [
         'solution_code', 'solution'

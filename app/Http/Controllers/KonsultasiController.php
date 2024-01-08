@@ -19,7 +19,6 @@ class KonsultasiController extends Controller
     public function storeAnswer(Request $request)
     {
         $answer = $request->input('answer');
-    
         // Mendapatkan nilai dari session yang sudah ada atau membuat session baru
         $userAnswers = session()->get('user_answer');
     
@@ -34,8 +33,10 @@ class KonsultasiController extends Controller
         // Menyimpan kembali array yang telah diupdate ke dalam session
         session(['user_answer' => $userAnswers]);
         
-        return redirect()->route('gejala-3.konsultasi-gejala-3');
+        if ($answer != null) {
+            return redirect()->route('gejala-3.konsultasi-gejala-3');
+        } else {
+            return redirect()->route('gejala-2.konsultasi-gejala-2');
+        }   
     }
-    
-
 }

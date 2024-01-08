@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\konsultasiGejala2Controller;
 use App\Http\Controllers\konsultasiGejala3Controller;
 use App\Http\Controllers\konsultasiGejala5Controller;
 use App\Http\Controllers\konsultasiGejala7Controller;
@@ -48,6 +49,9 @@ Route::get('/akhir-line-1/kesimpulan', [AkhirLine1Controller::class, 'index'])->
 Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
 
 
+// line 2
+// gejala 2
+Route::get('/konsultasi-gejala-2', [konsultasiGejala2Controller::class, 'index'])->name("gejala-2.konsultasi-gejala-2");
 // route cek session
 Route::get('/view-session', function () {
     dump(session()->all());

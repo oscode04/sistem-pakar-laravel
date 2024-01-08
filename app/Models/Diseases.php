@@ -14,6 +14,7 @@ class Diseases extends Model
     use SoftDeletes;
 
     protected $table = 'diseases';
+    protected $primaryKey = 'id_disease';
 
     protected $fillable = [
         'disease_code', 'disease_name', 'disease_cause', 'disease_detail'

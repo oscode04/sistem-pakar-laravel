@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Symptom;
+use App\Models\Diseases;
 use Illuminate\Support\Facades\Session;
 
 class AkhirLine1Controller extends Controller
@@ -12,9 +13,22 @@ class AkhirLine1Controller extends Controller
     {
         // Mengambil nilai jawaban dari session
         $userAnswers = Session::get('user_answer', []);
+        $diseases = Diseases::where('disease_code', 'P1')->get();
 
-        return view('pages.line1.akhir-line-1',  ['userAnswers' => $userAnswers]);
+        foreach ($diseases as $disease) {
+            // Ambil penyakit berdasarkan ID
+            $currentDisease = Diseases::find($disease->id_disease);
+
+            // Mengambil solusi untuk penyakit ini
+            $solutions = $currentDisease->solutions;
+
+            // Lakukan sesuatu dengan solusi-solusi ini...
+        }
+
+        
+        return view('pages.line1.akhir-line-1', compact('userAnswers', 'diseases', 'solutions'));
     }
+
     public function backToLandingPage()
     {
         // Menghapus seluruh data dari session
@@ -22,5 +36,18 @@ class AkhirLine1Controller extends Controller
 
         // Redirect ke halaman landing page atau halaman lainnya
         return redirect()->route('landing-page');
+    }
+
+    public function retrieveSolutions($idDisease)
+    {
+        $disease = Disease::find($idDisease);
+
+        if (!$disease) {
+            abort(404); // Handle jika penyakit tidak ditemukan
+        }
+
+        $solutions = $disease->solutions; // Mengambil solusi berdasarkan relasi
+
+        return view('pages.line1.akhir-line-1', ['solutions' => $solutions, 'userAnswers' => $userAnswers]);
     }
 }
