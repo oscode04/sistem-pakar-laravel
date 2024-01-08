@@ -6,20 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Symptom;
 use Illuminate\Support\Facades\Session;
 
-class KonsultasiGejala4Controller extends Controller
+class konsultasiGejala7L2Controller extends Controller
 {
     public function index()
     {
         $symptoms = Symptom::all();
 
-        return view('pages.line2.consultation-gejala-4', ['symptoms' => $symptoms]);
-        return view('pages.line2.consultation-gejala-4');
+        return view('pages.line2.consultation-gejala-7', ['symptoms' => $symptoms]);
     }
-
     // simpan data ke session
     public function storeAnswer(Request $request)
     {
         $answer = $request->input('answer');
+    
         // Mendapatkan nilai dari session yang sudah ada atau membuat session baru
         $userAnswers = session()->get('user_answer');
     
@@ -33,13 +32,7 @@ class KonsultasiGejala4Controller extends Controller
     
         // Menyimpan kembali array yang telah diupdate ke dalam session
         session(['user_answer' => $userAnswers]);
-        
-        if ($answer != null) {
-            // benerin biar ga bentrok sama route 1 lagi
-            return redirect()->route('gejala-7-line-2.konsultasi-gejala-7');
-        } else {
-            // benerin biar ga bentrok sama route 1 lagi
-            return redirect()->route('gejala-5-line-2-b.konsultasi-gejala-5');
-        }   
+
+        return redirect()->route('akhir-line-2.kesimpulan');
     }
 }

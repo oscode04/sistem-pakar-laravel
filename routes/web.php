@@ -10,8 +10,10 @@ use App\Http\Controllers\konsultasiGejala5Controller;
 use App\Http\Controllers\konsultasiGejala5L2BController;
 use App\Http\Controllers\KonsultasiGejala6Controller;
 use App\Http\Controllers\konsultasiGejala7Controller;
+use App\Http\Controllers\konsultasiGejala7L2Controller;
 use App\Http\Controllers\KonsultasiGejala8Controller;
 use App\Http\Controllers\AkhirLine1Controller;
+use App\Http\Controllers\AkhirLine2Controller;
 use App\Http\Controllers\AkhirLine2aController;
 use App\Http\Controllers\AkhirLine2bController;
 use App\Http\Controllers\InputPenyakitController;
@@ -62,6 +64,12 @@ Route::post('gejala-2/store-answer', [konsultasiGejala2Controller::class, 'store
 // gejala 4
 Route::get('/konsultasi-gejala-4', [KonsultasiGejala4Controller::class, 'index'])->name("gejala-4.konsultasi-gejala-4");
 Route::post('gejala-4/store-answer', [KonsultasiGejala4Controller::class, 'storeAnswer'])->name("gejala-4.store-answer");
+// gejala 7 line 2
+Route::get('/konsultasi-gejala-7-line-2', [KonsultasiGejala7L2Controller::class, 'index'])->name("gejala-7-line-2.konsultasi-gejala-7");
+Route::post('gejala-7-line-2/store-answer', [KonsultasiGejala7L2Controller::class, 'storeAnswer'])->name("gejala-7-line-2.store-answer");
+// akhir line 2
+Route::get('/akhir-line-2/kesimpulan', [AkhirLine2Controller::class, 'index'])->name("akhir-line-2.kesimpulan");
+Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
 
 // line 2 A
 // gejala 6
