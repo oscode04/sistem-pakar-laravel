@@ -33,6 +33,11 @@ class konsultasiGejala7L2Controller extends Controller
         // Menyimpan kembali array yang telah diupdate ke dalam session
         session(['user_answer' => $userAnswers]);
 
-        return redirect()->route('akhir-line-2.kesimpulan');
+
+        if ($answer != null) {
+            return redirect()->route('akhir-line-2.kesimpulan');
+        } else {
+            return redirect()->route('gejala-9-line-2-c.konsultasi-gejala-9');
+        }  
     }
 }

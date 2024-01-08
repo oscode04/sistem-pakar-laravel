@@ -12,10 +12,13 @@ use App\Http\Controllers\KonsultasiGejala6Controller;
 use App\Http\Controllers\konsultasiGejala7Controller;
 use App\Http\Controllers\konsultasiGejala7L2Controller;
 use App\Http\Controllers\KonsultasiGejala8Controller;
+use App\Http\Controllers\KonsultasiGejala9Controller;
+use App\Http\Controllers\KonsultasiGejala10Controller;
 use App\Http\Controllers\AkhirLine1Controller;
 use App\Http\Controllers\AkhirLine2Controller;
 use App\Http\Controllers\AkhirLine2aController;
 use App\Http\Controllers\AkhirLine2bController;
+use App\Http\Controllers\AkhirLine2cController;
 use App\Http\Controllers\InputPenyakitController;
 use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
@@ -90,6 +93,16 @@ Route::post('gejala-5-line-b/store-answer', [konsultasiGejala5L2BController::cla
 Route::get('/akhir-line-2-b/kesimpulan', [AkhirLine2bController::class, 'index'])->name("akhir-line-2-b.kesimpulan");
 Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
 
+// line 2 c
+// gejala 9
+Route::get('/konsultasi-gejala-9-line-2-c', [KonsultasiGejala9Controller::class, 'index'])->name("gejala-9-line-2-c.konsultasi-gejala-9");
+Route::post('gejala-9-line-2-c/store-answer', [KonsultasiGejala9Controller::class, 'storeAnswer'])->name("gejala-9-line-2-c.store-answer");
+// gejala 10
+Route::get('/konsultasi-gejala-10-line-2-c', [KonsultasiGejala10Controller::class, 'index'])->name("gejala-10-line-2-c.konsultasi-gejala-10");
+Route::post('gejala-10-line-2-c/store-answer', [KonsultasiGejala10Controller::class, 'storeAnswer'])->name("gejala-10-line-2-c.store-answer");
+// akhir line 2 B
+Route::get('/akhir-line-2-c/kesimpulan', [AkhirLine2cController::class, 'index'])->name("akhir-line-2-c.kesimpulan");
+Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
 
 // route cek session
 Route::get('/view-session', function () {
