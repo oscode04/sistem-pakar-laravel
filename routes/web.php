@@ -25,6 +25,9 @@ use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
 use App\Http\Controllers\AntraknosaController;
 use App\Http\Controllers\PhytopthoraController;
+use App\Http\Controllers\RembahSemaiController;
+use App\Http\Controllers\LayuFusariumController;
+use App\Http\Controllers\PenyakitKuningController;
 
 
 /*
@@ -113,6 +116,9 @@ Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLanding
 // penyakit 1
 Route::get('/antraknosa', [AntraknosaController::class, 'index'])->name("antraknosa");
 Route::get('/phytopthora', [PhytopthoraController::class, 'index'])->name("phytopthora");
+Route::get('/rembah-semai', [RembahSemaiController::class, 'index'])->name("rembah-semai");
+Route::get('/layu-fusarium', [LayuFusariumController::class, 'index'])->name("layu-fusarium");
+Route::get('/penyakit-kuning', [PenyakitKuningController::class, 'index'])->name("penyakit-kuning");
 
 
 

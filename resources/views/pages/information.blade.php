@@ -29,7 +29,7 @@
             </div>
             <div class="col-lg-3 mt-lg-3">
                 <div class="card custom-penyakit-card d-flex align-items-center justify-content-center">
-                    <a href="{{route('antraknosa')}}">
+                    <a href="{{route('rembah-semai')}}">
                         <div class="card-body">
                             <p class="nama-penyakit text-center">Rembah Semai</p>
                         </div>
@@ -40,7 +40,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-3 mt-lg-3">
                 <div class="card custom-penyakit-card d-flex align-items-center justify-content-center">
-                    <a href="{{route('antraknosa')}}">
+                    <a href="{{route('layu-fusarium')}}">
                         <div class="card-body">
                             <p class="nama-penyakit text-center">Layu Fusarium</p>
                         </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="col-lg-3 mt-lg-3">
                 <div class="card custom-penyakit-card d-flex align-items-center justify-content-center">
-                    <a href="{{route('antraknosa')}}">
+                    <a href="{{route('penyakit-kuning')}}">
                         <div class="card-body">
                             <p class="nama-penyakit text-center">Penyakit Kuning</p>
                         </div>
