@@ -5,12 +5,15 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\konsultasiGejala2Controller;
 use App\Http\Controllers\konsultasiGejala3Controller;
+use App\Http\Controllers\KonsultasiGejala4Controller;
 use App\Http\Controllers\konsultasiGejala5Controller;
+use App\Http\Controllers\konsultasiGejala5L2BController;
 use App\Http\Controllers\KonsultasiGejala6Controller;
 use App\Http\Controllers\konsultasiGejala7Controller;
 use App\Http\Controllers\KonsultasiGejala8Controller;
 use App\Http\Controllers\AkhirLine1Controller;
 use App\Http\Controllers\AkhirLine2aController;
+use App\Http\Controllers\AkhirLine2bController;
 use App\Http\Controllers\InputPenyakitController;
 use App\Http\Controllers\InputGejalaController;
 use App\Http\Controllers\InputSolusiController;
@@ -56,6 +59,10 @@ Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLanding
 // gejala 2
 Route::get('/konsultasi-gejala-2', [konsultasiGejala2Controller::class, 'index'])->name("gejala-2.konsultasi-gejala-2");
 Route::post('gejala-2/store-answer', [konsultasiGejala2Controller::class, 'storeAnswer'])->name("gejala-2.store-answer");
+// gejala 4
+Route::get('/konsultasi-gejala-4', [KonsultasiGejala4Controller::class, 'index'])->name("gejala-4.konsultasi-gejala-4");
+Route::post('gejala-4/store-answer', [KonsultasiGejala4Controller::class, 'storeAnswer'])->name("gejala-4.store-answer");
+
 // line 2 A
 // gejala 6
 Route::get('/konsultasi-gejala-6', [KonsultasiGejala6Controller::class, 'index'])->name("gejala-6.konsultasi-gejala-6");
@@ -65,6 +72,14 @@ Route::get('/konsultasi-gejala-8', [KonsultasiGejala8Controller::class, 'index']
 Route::post('gejala-8/store-answer', [KonsultasiGejala8Controller::class, 'storeAnswer'])->name("gejala-8.store-answer");
 // akhir line 2 A
 Route::get('/akhir-line-2-a/kesimpulan', [AkhirLine2aController::class, 'index'])->name("akhir-line-2-a.kesimpulan");
+Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
+
+// line 2 b
+// gejala 5 line b
+Route::get('/konsultasi-gejala-5-line-b', [konsultasiGejala5L2BController::class, 'index'])->name("gejala-5-line-2-b.konsultasi-gejala-5");
+Route::post('gejala-5-line-b/store-answer', [konsultasiGejala5L2BController::class, 'storeAnswer'])->name("gejala-5-line-2-b.store-answer");
+// akhir line 2 B
+Route::get('/akhir-line-2-b/kesimpulan', [AkhirLine2bController::class, 'index'])->name("akhir-line-2-b.kesimpulan");
 Route::get('/back-to-landing-page', [AkhirLine1Controller::class, 'backToLandingPage'])->name("back-to-landing-page");
 
 
