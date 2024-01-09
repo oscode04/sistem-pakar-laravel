@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.admin-layout')
 
 @section('title')
     Daftar Penyakit
