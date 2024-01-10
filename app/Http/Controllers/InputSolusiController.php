@@ -21,7 +21,7 @@ class InputSolusiController extends Controller
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
-                        <form action = "' . route('input-solusi.destroy', $item->id_solution) . '" method="POST">
+                        <form action = "' . route('admin.input-solusi.destroy', $item->id_solution) . '" method="POST">
                             ' . method_field('DELETE') . csrf_field() . '
                             <button type="submit" class="dopdown-item text-danger ms-2"  style="background-color: transparent; border: none;">
                                 Hapus

@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="card-body">
                             {{-- benerin href ntar --}}
-                            <a href="{{route('input-solusi.create')}}" class="btn btn-primary mb-3">
+                            <a href="{{route('admin.input-solusi.create')}}" class="btn btn-primary mb-3">
                                 + Tambah Solusi Baru
                             </a>
                             <div class="table-responsive">

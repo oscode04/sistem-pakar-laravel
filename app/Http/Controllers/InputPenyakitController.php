@@ -24,7 +24,7 @@ class InputPenyakitController extends Controller
             return DataTables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
-                        <form action = "' . route('input-penyakit.destroy', $item->id_disease) . '" method="POST">
+                        <form action = "' . route('admin.input-penyakit.destroy', $item->id_disease) . '" method="POST">
                             ' . method_field('DELETE') . csrf_field() . '
                             <button type="submit" class="dopdown-item text-danger ms-2"  style="background-color: transparent; border: none;">
                                 Hapus

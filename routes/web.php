@@ -28,6 +28,7 @@ use App\Http\Controllers\PhytopthoraController;
 use App\Http\Controllers\RembahSemaiController;
 use App\Http\Controllers\LayuFusariumController;
 use App\Http\Controllers\PenyakitKuningController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -133,8 +134,7 @@ Route::get('/view-session', function () {
 
 
 // route admin
-Route::prefix('admin')
-    ->group(function (){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
 // route input penyakit
     Route::get('input-penyakit', [InputPenyakitController::class, 'index'])->name('input-penyakit');
     Route::get('penyakit/create', [InputPenyakitController::class, 'create'])->name('input-penyakit.create');
@@ -154,3 +154,12 @@ Route::prefix('admin')
     Route::post('solusi/store', [InputSolusiController::class, 'store'])->name('input-solusi.store');
     Route::delete('solusi/destroy/{id_disease}', [InputSolusiController::class, 'destroy'])->name('input-solusi.destroy');
 });
+
+// route login
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login-proses', [LoginController::class, 'login_proses'])->name('login-proses');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// route register
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');

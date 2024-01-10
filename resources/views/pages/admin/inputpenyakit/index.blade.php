@@ -25,7 +25,7 @@
                     <div class="card">
                         <div class="card-body">
                             {{-- benerin href ntar --}}
-                            <a href="{{route('input-penyakit.create')}}" class="btn btn-primary mb-3">
+                            <a href="{{route('admin.input-penyakit.create')}}" class="btn btn-primary mb-3">
                                 + Tambah Jenis Penyakit Baru
                             </a>
                             <div class="table-responsive">

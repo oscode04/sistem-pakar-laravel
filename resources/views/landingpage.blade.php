@@ -34,9 +34,11 @@
                   </a>
                 </div>
                 <div class="col-lg-6 col-6">
-                  <button type="button" class="info-btn btn">
-                    Informasi Penyakit
-                  </button>
+                  <a href="{{route("information")}}">
+                    <button type="button" class="info-btn btn">
+                      Informasi Penyakit
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

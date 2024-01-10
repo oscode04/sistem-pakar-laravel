@@ -16,11 +16,13 @@
         class="collapse navbar-collapse justify-content-end"
         id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="{{route("input-penyakit")}}"
+          <a class="nav-link active" aria-current="page" href="{{route("admin.input-penyakit")}}"
             >Penyakit</a
           >
-          <a class="nav-link ms-lg-4" href="{{ route("input-gejala") }}">Gejala</a>
-          <a class="nav-link ms-lg-4" href="{{route("input-solusi")}}">Solusi</a>
+          <a class="nav-link ms-lg-4" href="{{ route("admin.input-gejala") }}">Gejala</a>
+          <a class="nav-link ms-lg-4" href="{{route("admin.input-solusi")}}">Solusi</a>
+          <a class="nav-link ms-lg-4" >||</a>
+          <a class="nav-link ms-lg-4" href="{{route("logout")}}">Logout</a>
         </div>
       </div>
     </div>
